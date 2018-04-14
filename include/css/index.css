@@ -1,4 +1,42 @@
-body {
+body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
+    /* The image used */
+    background-image: url("../image/bg_index.jpg");
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+#sc_logo{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /* border-radius: 50%;   */   
+    
+    
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom : 0; 
+    
+}
+
+#sc_login{
+    width: 40%;
+    height: 80%;
+    background-color: white;
+    
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* opacity: 0.5; */
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+}
+
