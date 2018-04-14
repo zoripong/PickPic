@@ -4,28 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <title>PickPIC</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="include/script/index.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+
     <link rel="stylesheet" href="include/css/index.css">
 </head>
 
 <body>
 
+<!-- 
+    <section id="fullscreen-bg">
+        <video loop muted autoplay poster="img/videoframe.jpg" id="fullscreen-bg__video">
+            <source src="include/video/bg_index.mp4" type="video/mp4">
+        </video>
+    </section> -->
     <section id="sc_logo" class="sc_center">
-        <img src="include/image/logo_test.png" alt="PickPIC" >
+        <img src="include/image/logo_test.png" alt="PickPIC">
     </section>
 
     <section id="sc_login" class="sc_center">
         <h1 id="title_login">PickPIC</h1>
-        
+
         <form id="form_login" action="">
-            <input type="text" placeholder="ID"><br>
-            <input type="password"  placeholder="PASSWORD">
+            <input type="text" placeholder="ID" class="form_input" required>
+            <br>
+            <input type="password" placeholder="PASSWORD" class="form_input" required>
+            <!-- <input type="submit" src="include/image/ic_login.svg"> -->
+            <input id="ic_login" type="image" name="submit" src="include/image/ic_login.svg" border="0" alt="Submit" />
         </form>
 
-        <img id="ic_login" src="include/image/ic_login.svg" alt="login">
-
-
-        <p><a href="#">SignIn</a></p>
-        <p><a href="#">Forgot Password?</a></p>
+        <p>
+            <a href="#">SignIn</a>
+        </p>
+        <p>
+            <a href="#">Forgot Password?</a>
+        </p>
 
     </section>
 </body>
