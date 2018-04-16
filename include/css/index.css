@@ -1,4 +1,12 @@
-    body, html {
+    /* TODO
+        #1_ sc_login 안에 있는 내용 전부 세로 align
+        #2_ 클릭했을 때 내용 먼저 보이는거 고쳐용
+        #3_ 로고 이미지 수정
+        #4_ 로고 hover 효과 수정
+    */
+    
+    body,
+    html {
         font-family: 'Open Sans', 'Roboto', 'Arvo', sans-serif;
         height: 100%;
         margin: 0;
@@ -8,7 +16,6 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    
     /* #fullscreen-bg {
         position: fixed;
         top: 0;
@@ -26,7 +33,7 @@
         width: 100%;
         height: 100%;
     } */
-
+    
     #sc_logo {
         position: absolute;
         width: 200px;
@@ -37,11 +44,12 @@
         right: 0;
         bottom: 0;
     }
-
+    
     #sc_login {
-        display: none;
         width: 35%;
-        height: 75%;
+        height: 0%;
+        transition: height 3s;
+        opacity: 0;
         background-color: white;
         margin: 0;
         position: absolute;
@@ -50,9 +58,8 @@
         transform: translate(-50%, -50%);
         /* opacity: 0.5; */
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
-        
     }
-
+    
     #title_login {
         width: 100%;
         text-align: center;
@@ -60,12 +67,12 @@
         padding-bottom: 20px;
         font-size: 2em;
     }
-
+    
     #form_login {
         width: 100%;
         text-align: center;
     }
-
+    
     .form_input {
         width: 60%;
         height: 40px;
@@ -73,28 +80,28 @@
         border-radius: 5px;
         border: 1px solid #cccccc;
     }
-
+    
     #ic_login {
         width: 10%;
         display: block;
         margin: auto;
         padding: 25px;
     }
-
+    
     #sc_login>p {
         width: 100%;
         text-align: center;
     }
-
+    
     #sc_login>p :link {
         text-decoration: none;
         color: #0e0e68;
     }
-
+    
     #sc_login>p :hover {
         text-decoration: underline;
     }
-
-    #sc_logo:hover{
+    
+    #sc_logo:hover {
         opacity: 0.5;
     }

@@ -1,8 +1,9 @@
-$( document ).ready(function() {
+$(document).ready(function() {
     $("#sc_logo").click(function() {
         $("#sc_login").css({
-            "display" :"block"
+            "opacity": "1",
+            "height": "75%"
         });
 
-      });
-  });
+    });
+});
