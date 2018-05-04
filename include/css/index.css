@@ -34,7 +34,7 @@
         height: 100%;
     } */
     
-    #sc_logo {
+    #sc-logo {
         position: absolute;
         width: 200px;
         height: 200px;
@@ -45,7 +45,7 @@
         bottom: 0;
     }
     
-    #sc_login {
+    #sc-login {
         width: 35%;
         height: 0%;
         transition: height 3s;
@@ -60,7 +60,7 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
     }
     
-    #title_login {
+    #title-login {
         width: 100%;
         text-align: center;
         padding-top: 30px;
@@ -68,12 +68,12 @@
         font-size: 2em;
     }
     
-    #form_login {
+    #form-login {
         width: 100%;
         text-align: center;
     }
     
-    .form_input {
+    .form-input {
         width: 60%;
         height: 40px;
         margin: 15px;
@@ -81,27 +81,27 @@
         border: 1px solid #cccccc;
     }
     
-    #ic_login {
+    #ic-login {
         width: 10%;
         display: block;
         margin: auto;
         padding: 25px;
     }
     
-    #sc_login>p {
+    #sc-login>p {
         width: 100%;
         text-align: center;
     }
     
-    #sc_login>p :link {
+    #sc-login>p :link {
         text-decoration: none;
         color: #0e0e68;
     }
     
-    #sc_login>p :hover {
+    #sc-login>p :hover {
         text-decoration: underline;
     }
     
-    #sc_logo:hover {
+    #sc-logo:hover {
         opacity: 0.5;
     }
