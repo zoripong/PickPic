@@ -6,20 +6,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PickPIC</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="include/css/main.css">
+    <script>
+        $(window).scroll(function() {
+            var parentWidth = parseInt($(window).height());
+            var standardHeightPx = parentWidth * (35 / 100);
+            var minHeightPx = parentWidth * (5 / 100);
 
+            if (standardHeightPx - $(this).scrollTop() > minHeightPx) {
+                $("#hd-user-title").css({
+                    "height": standardHeightPx - $(this).scrollTop()
+                        //,"line-height": standardHeightPx - $(this).scrollTop()
+                });
+            } else {
+                $("#hd-user-title").css({
+                    "height": parentWidth * (5 / 100)
+                        //,"line-height": parentWidth * (5 / 100)
+                });
+
+            }
+        });
+    </script>
 </head>
+
 
 <body>
     <header id="hd-user-title">
-        가나
+        <section id="sc_home">
+            <a href="index.html">가나</a>
+        </section>
         <section id="user-info">
             <img src="include/image/ic-user-default-profile.svg" alt="" srcset="">
             <h1>devuri404</h1>
         </section>
     </header>
-    <section>
+    <section id="sc_user_images">
+        <section id="sc_user_images_row">
+            <div class="user_image_container">
+                <img src="include/image/image_1.jpg">
+                <div class="image_opacity"></div>
+                <div class="image_detail">
+                    <img class="image_detail_btn" src="include/image/sc_loupe.svg">
+                </div>
+            </div>
+            <div class="user_image_container">
+                <img src="include/image/image_2.jpg">
+                <div class="image_opacity"></div>
+                <div class="image_detail">
+                    <img class="image_detail_btn" src="include/image/sc_loupe.svg">
+                </div>
+            </div>
+            <div class="user_image_container">
+                <img src="include/image/image_3.jpg">
+                <div class="image_opacity"></div>
+                <div class="image_detail">
+                    <img class="image_detail_btn" src="include/image/sc_loupe.svg">
+                </div>
+            </div>
 
+        </section>
+        <section id="sc_user_images_row">
+            <div class="user_image_container">
+                <img src="include/image/image_4.jpg">
+                <div class="image_opacity"></div>
+                <div class="image_detail">
+                    <img class="image_detail_btn" src="include/image/sc_loupe.svg">
+                </div>
+            </div>
+            <div class="user_image_container">
+                <img src="include/image/image_5.jpg">
+                <div class="image_opacity"></div>
+                <div class="image_detail">
+                    <img class="image_detail_btn" src="include/image/sc_loupe.svg">
+                </div>
+            </div>
+            <div class="user_image_container">
+                <img src="include/image/image_6.jpg">
+                <div class="image_opacity"></div>
+                <div class="image_detail">
+                    <img class="image_detail_btn" src="include/image/sc_loupe.svg">
+                </div>
+            </div>
+        </section>
+        <section id="sc_user_images_row">
+            <div class="user_image_container">
+                <img src="include/image/image_1.jpg">
+                <div class="image_opacity"></div>
+                <div class="image_detail">
+                    <img class="image_detail_btn" src="include/image/sc_loupe.svg">
+                </div>
+            </div>
+            <div class="user_image_container">
+                <img src="include/image/image_2.jpg">
+                <div class="image_opacity"></div>
+                <div class="image_detail">
+                    <img class="image_detail_btn" src="include/image/sc_loupe.svg">
+                </div>
+            </div>
+            <div class="user_image_container">
+                <img src="include/image/image_3.jpg">
+                <div class="image_opacity"></div>
+                <div class="image_detail">
+                    <img class="image_detail_btn" src="include/image/sc_loupe.svg">
+                </div>
+            </div>
+        </section>
+        <section id="sc_user_images_row">
+            <div class="user_image_container">
+                <img src="include/image/image_4.jpg">
+                <div class="image_opacity"></div>
+                <div class="image_detail">
+                    <img class="image_detail_btn" src="include/image/sc_loupe.svg">
+                </div>
+            </div>
+        </section>
 
     </section>
 </body>
