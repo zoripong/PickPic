@@ -26,12 +26,32 @@
                 });
 
             }
+
+
+
+        });
+        $(window).on('load', function() {
+            // Run code
+            // $(".user_image_container").on("mouseover", function(e) {
+            //     $(event.target).closest(".user_image_container").children(".image_opacity").css({
+            //         "height": "100%",
+            //         "margin-bottom": "0"
+            //     });
+            // });
+
+
+            // $(".user_image_container").mouseout(function() {
+            //     $(".image_opacity").css({
+            //         "height": "0%"
+            //     });
+            // });
         });
     </script>
 </head>
 
 
 <body>
+    <!-- user title -->
     <header id="hd-user-title">
         <section id="sc_home">
             <a href="index.html">가나</a>
@@ -41,6 +61,8 @@
             <h1>devuri404</h1>
         </section>
     </header>
+    <!--  -->
+    <!-- user images -->
     <section id="sc_user_images">
         <section id="sc_user_images_row">
             <div class="user_image_container">
@@ -123,6 +145,61 @@
         </section>
 
     </section>
+    <!--  -->
+    <!-- pop up dialog -->
+    <section id="sc_popup">
+        <section id="sc_popup_image">
+            <img src="include/image/image_1.jpg" alt="">
+        </section>
+        <section id="sc_popup_detail">
+            <div id="detail_row">
+                <div id="detail_tags">
+                    <a href="#">
+                        <p>#샌프란시스코</p>
+                    </a>
+                    <a href="#">
+                        <p>#금문교</p>
+                    </a>
+                    <a href="#">
+                        <p>#미국</p>
+                    </a>
+                </div>
+                <div id="detail_functions">
+                    <img src="include/image/ic_download.svg">
+                    <img src="include/image/ic_download.svg">
+                </div>
+            </div>
+
+            <div id="detail_location">
+                <img src="include/image/ic_location.svg">
+                <p>미국 캘리포니아주 골든게이트브릿지</p>
+            </div>
+
+            <div id="detail_explanation">
+                <p>
+                    이름과, 가난한 아침이 피어나듯이 많은 봅니다. 잠, 이름과, 어머니, 나의 계십니다. 별을 많은 하늘에는 내 다 자랑처럼 비둘기, 있습니다. 같이 이네들은 하늘에는 가난한 언덕 까닭입니다. 않은 언덕 했던 남은 릴케 계절이 까닭입니다. 보고, 추억과 패, 나의 노새, 있습니다. 별 걱정도 오는 봅니다. 마리아 별들을 멀리 동경과 묻힌 불러 아직 듯합니다. 나는 별을 계절이 어머니 책상을 멀듯이, 파란 까닭이요, 이웃 버리었습니다. 남은 많은 옥
+                    벌써 흙으로 나의 나는 아직 까닭입니다.
+                </p>
+            </div>
+            <div id="detail_shooting_info">
+                <img id="info_camera_img" src="include/image/ic_camera.svg">
+                <p id="info_camera">Sony a5100</p>
+                <div id="info_settings">
+                    <!-- 화각, 조리개값, 셔터속도, iso -->
+                    <p id="info_angle">85.0mm</p>
+                    <p id="info_tightening">f/1.2</p>
+                    <p id="info_shutter_speed">1/200s</p>
+                    <p id="info_iso">ISO 500</p>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!--  -->
+    <!-- floating button -->
+    <section id="sc_float_btn">
+        <img id="float_btn" src="include/image/ic_floating_add.svg" alt="">
+    </section>
+    <!--  -->
 </body>
 
 </html>

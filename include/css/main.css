@@ -22,7 +22,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     /* box-shadow:[inset] (오른쪽위치) (아래위치) (블러) (색상); */
-    box-shadow: inset 0 -5px 10px #777777;
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.5);
     transition-duration: 0.2s;
 }
 
@@ -51,7 +51,7 @@ body {
     width: 80%;
     margin: 0px 10%;
     padding: 75px 0;
-    padding-top: 17.5%;
+    padding-top: 20%;
 }
 
 #sc_user_images_row {
@@ -86,14 +86,14 @@ body {
 }
 
 
-/*  */
+/* hover : white rectangle */
 
 .image_opacity {
-    display: inline-block;
     width: 100%;
-    height: 100%;
+    height: 0%;
     transition: .5s ease;
-    opacity: 0;
+    /* opacity: 0; */
+    opacity: 0.5;
 }
 
 .image_detail_button {
@@ -123,7 +123,7 @@ body {
 }
 
 .user_image_container:hover .image_opacity {
-    opacity: 0.5;
+    height: 100%;
 }
 
 .user_image_container:hover .image_detail_button {
@@ -131,12 +131,14 @@ body {
 }
 
 
-/*  */
+/* hover : loupe image */
 
 .image_detail {
     display: inline-block;
     transition: .5s ease;
+    transition-delay: .2s;
     opacity: 0;
+    width: 0%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -148,6 +150,7 @@ body {
 
 .user_image_container:hover .image_detail {
     opacity: 1;
+    width: 30%;
 }
 
 .image_detail_btn {
@@ -155,3 +158,60 @@ body {
     height: 50%;
     background-color: rgba(0, 0, 0, 0);
 }
+
+
+/* floating button*/
+
+#float_btn {
+    z-index: 999;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 50px;
+    box-shadow: 2px 2px 3px #999;
+    transition: .3s ease;
+}
+
+#float_btn:hover {
+    box-shadow: 4px 4px 5px #999;
+}
+
+
+/* popup */
+
+#sc_popup {
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    width: 60%;
+    height: 100%;
+    overflow: auto;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#sc_popup_image>img {
+    width: 100%;
+    height: auto;
+    /* fixme : height */
+}
+
+#sc_popup_detail {
+    width: 100%;
+}
+
+#detail_row {
+    width: 100%;
+}
+
+#detail_tags>a>p {
+    display: inline-block;
+}
+
+#detail_tags>a:link {
+    text-decoration: none;
+}
+
+#detail_tags>a:hover {}
