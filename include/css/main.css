@@ -203,15 +203,95 @@ body {
 }
 
 #detail_row {
-    width: 100%;
+    width: 97%;
+    padding:1.5%
+}
+
+#detail_tags{
+    display: inline-block;
+    line-height: 30px;
+    height: 30px;
+    vertical-align: middle;
 }
 
 #detail_tags>a>p {
     display: inline-block;
+    color : #1d1d6d;
 }
 
 #detail_tags>a:link {
     text-decoration: none;
 }
 
-#detail_tags>a:hover {}
+#detail_tags>a:hover {
+
+}
+
+#detail_functions{
+    display: block;
+    float: right;
+}
+
+#detail_functions>img{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    padding:2.5px;
+}
+
+#detail_location{
+    clear: both;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+#detail_location>img{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    padding: 2.5px;
+}
+
+#detail_location>p{
+    display: inline-block;
+    
+}
+#detail_explanation{
+    width: 96%;
+    padding: 2%;
+}
+
+#detail_explanation>p{
+    color: #333333;
+}
+
+#detail_shooting_info{
+    width: 99%;
+    padding: 0.5%;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+#detail_shooting_info>img{
+    display: inline-block;
+    width : 25px;
+    height: 25px;
+    padding: 2.5px;
+}
+
+#detail_shooting_info>p{
+    display: inline-block;
+}
+
+#info_settings{
+    display: block;
+    float: right;
+}
+
+#info_settings > p{
+    display: inline-block;
+    margin: 5px;
+}
