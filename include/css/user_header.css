@@ -18,20 +18,33 @@
 #sc_home {
     margin: 10px;
     display: inline-block;
+    background-color: rgba(0, 0, 0, 0);
+}
+#sc_home img,
+#sc_home a{
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #user-info {
     float: right;
-    margin: 10px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    
 }
 
 #user-info img {
     width: 30px;
     height: 30px;
-}
 
+}
+#user-info>a{
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    color: #ffffff;
+}
 #user-info img,
 #user-info h1 {
     display: inline;
     vertical-align: middle;
+    background-color: rgba(0, 0, 0, 0);
 }

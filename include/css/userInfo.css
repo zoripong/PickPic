@@ -74,3 +74,6 @@ body {
     background-color: white;
     color: #4CAF50;
 }
+#hd-user-title{
+    cursor: pointer;
+}

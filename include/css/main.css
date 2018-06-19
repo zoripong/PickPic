@@ -54,7 +54,7 @@ body {
 /* hover : white rectangle */
 
 .image_opacity {
-    width: 100%;
+    width: 0%;
     height: 0%;
     position: absolute;
     top: 0;
@@ -96,6 +96,7 @@ body {
 }
 
 .user_image_container:hover .image_opacity {
+    width: 100%;
     height: 100%;
 }
 
