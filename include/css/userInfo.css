@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#sc_user_info {
+    width: 60%;
+    margin-left: 20%;
+}

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PickPIC</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="include/css/user_header.css">
     <link rel="stylesheet" href="include/css/main.css">
     <script>
         var parentHeight = parseInt($(window).height());
@@ -27,44 +28,92 @@
                 });
 
             }
-
-
-
         });
+
+
+
         $(window).on('load', function() {
-            // Run code
-            // $(".user_image_container").on("mouseover", function(e) {
-            //     $(event.target).closest(".user_image_container").children(".image_opacity").css({
-            //         "height": "100%",
-            //         "margin-bottom": "0"
-            //     });
-            // });
-
-
-            // $(".user_image_container").mouseout(function() {
-            //     $(".image_opacity").css({
-            //         "height": "0%"
-            //     });
-            // });
-
-            // detail_row 40px
-            // detail_location 40px
-            // detail_explanation 110px
-            // detail_shooting_info 40px
-
-            $("#sc_popup_image>img").css({
-                "width": "auto",
-                "height": parentHeight - 250
-            });
-            var popImageWidth = parseInt($("#sc_popup_image>img").width());
-            $("#sc_popup_image_background").css({
-                "width": popImageWidth,
-                "height": parentHeight - 250
-            });
-
             $("#btn").click(function() {
+                $("#sc_popup_image>img").css({
+                    "width": "auto",
+                    "height": parentHeight - 250
+                });
+                var popImageWidth = parseInt($("#sc_popup_image>img").width());
+                // alert(popImageWidth);
+                $("#sc_popup_image_background").css({
+                    "width": "60%",
+                    "height": parentHeight - 250
+                });
+
                 $("#sc_popup").css("display", "block");
             });
+
+
+
+            $("#close_modal").click(function() {
+                $("#sc_popup").css("display", "none");
+            });
+
+            $("#close_add_modal").click(function() {
+                $("#sc_add_popup").css("display", "none");
+            });
+            $("#sc_float_btn").click(function() {
+                $("#sc_popup_add_image").css({
+                    "width": "100%",
+                    "height": parentHeight - 250
+                });
+                $("#sc_add_popup").css("display", "block");
+            });
+
+            $('#sc_popup_add_image').click(function() {
+                // FIXME
+                $('#input_image_upload').trigger('click');
+
+            });
+            $("input[type=file]").on("click", function(e) {
+                e.stopPropagation();
+            });
+
+            $("#input_image_upload").on("change", function(e) {
+
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#preview').attr('src', e.target.result);
+                        $('#sc_popup_add_image_background_here').attr('src', e.target.result);
+                        //                     max-height: 100%;
+                        // max-width: 100%;
+                        // width: auto;
+                        // height: auto;
+
+                        $("#sc_popup_add_image_background_here").css({
+                            "width": "100%",
+                            "height": "100%",
+                            "z-index": 996,
+                        });
+                        $("#preview").css({
+                            "max-width": "60%",
+                            "max-height": parentHeight - 250,
+                            "width": "auto",
+                            "height": "auto",
+                            "z-index": 10000
+                        });
+
+                        // sc_popup_add_image_background
+
+                    };
+
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+        });
+
+        $(document).keyup(function(e) {
+            if (e.keyCode == 27) { // escape key maps to keycode `27`
+                $("#sc_popup").css("display", "none");
+                $("#sc_add_popup").css("display", "none");
+            }
         });
     </script>
 </head>
@@ -77,11 +126,15 @@
             <a href="index.html">가나</a>
         </section>
         <section id="user-info">
-            <img src="include/image/ic-user-default-profile.svg" alt="" srcset="">
-            <h1>devuri404</h1>
+            <a href="">
+                <img src="include/image/ic-user-default-profile.svg" alt="" srcset="">
+                <h1>devuri404</h1>
+            </a>
         </section>
     </header>
     <!--  -->
+
+
     <!-- user images -->
     <section id="sc_user_images">
         <section id="sc_user_images_row">
@@ -166,12 +219,13 @@
 
     </section>
 
-    <button id="btn">modal</button>
     <!--  -->
-
+    <!-- FIXME -->
+    <button id="btn">modal</button>
+    <button id="add_btn">add_modal</button>
     <!-- pop up dialog -->
     <section id="sc_popup">
-
+        <span id="close_modal">X</span>
         <section id="sc_popup_content">
             <section id="sc_popup_image_background"></section>
             <section id="sc_popup_image">
@@ -229,6 +283,65 @@
         <img id="float_btn" src="include/image/ic_floating_add.svg" alt="">
     </section>
     <!--  -->
-</body>
 
-</html>
+    <!-- pop up dialog -->
+    <!-- HERE -->
+    <section id="sc_add_popup">
+
+        <span id="close_add_modal">X</span>
+
+        <section id="sc_add_popup_content">
+            <form action="#">
+
+                <section id="sc_popup_add_image">
+                    <section id="sc_popup_add_image_background">
+                        <img src="" id="sc_popup_add_image_background_here">
+                    </section>
+                    <img id="preview" src="include/image/ic_add_picture.svg">
+
+                    <input type="file" id="input_image_upload" accept="image/*" name="image">
+                </section>
+                <section id="sc_popup_detail">
+                    <div id="detail_row">
+                        <div id="detail_tags">
+                            <input type="text" placeholder="#..">
+                        </div>
+                    </div>
+                    <div id="detail_location">
+                        <img src="include/image/ic_location.svg">
+                        <input type="text" placeholder="사진 촬영 장소를 공유하세요.">
+                    </div>
+
+                    <div id="detail_explanation">
+                        <textarea></textarea>
+                    </div>
+                    <div id="detail_shooting_info">
+                        <img id="info_camera_img" src="include/image/ic_camera.svg">
+                        <select id="info_camera">
+                            <option>
+                                SONY a5100
+                            </option>
+                            <option>
+                                Canon m5000
+                            </option>
+                        </select>
+
+                        <div id="info_settings">
+                            <!-- 화각, 조리개값, 셔터속도, iso -->
+                            <!-- <p id="info_angle">85.0mm</p>
+                        <p id="info_tightening">f/1.2</p>
+                        <p id="info_shutter_speed">1/200s</p>
+                        <p id="info_iso">ISO 500</p> -->
+                            <input type="number" id="info_angle" name="info_angle" placeholder="화각">
+                            <input type="number" id="info_tightening" name="info_tightening" placeholder="조리개값">
+                            <input type="number" id="info_shutter_speed" name="info_shutter_speed" placeholder="셔터속도">
+                            <input type="number" id="info_iso" name="info_iso" placeholder="ISO">
+                        </div>
+                    </div>
+
+
+                </section>
+            </form>
+        </section>
+    </section>
+</body>

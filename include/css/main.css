@@ -9,82 +9,6 @@ body {
     height: 100%;
 }
 
-#hd-user-title {
-    z-index: 888;
-    position: fixed;
-    /* overflow: hidden; */
-    width: 100%;
-    height: 35%;
-    line-height: 35%;
-    background-image: url("../image/image_6.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    /* box-shadow:[inset] (오른쪽위치) (아래위치) (블러) (색상); */
-    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.5);
-    transition-duration: 0.2s;
-}
-
-#sc_home {
-    margin: 10px;
-    display: inline-block;
-}
-
-#user-info {
-    float: right;
-    margin: 10px;
-}
-
-#user-info>img {
-    width: 30px;
-    height: 30px;
-}
-
-#user-info>img,
-#user-info>h1 {
-    display: inline;
-    vertical-align: middle;
-}
-
-#sc_user_images {
-    width: 80%;
-    margin: 0px 10%;
-    padding: 75px 0;
-    padding-top: 20%;
-}
-
-#sc_user_images_row {
-    margin: 15px 0;
-}
-
-.user_image_container {
-    /*can be anything*/
-    width: 31%;
-    margin: 1%;
-    height: 300px;
-    /*can be anything*/
-    display: inline-block;
-    position: relative;
-}
-
-.user_image_container>img {
-    max-height: 100%;
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    opacity: 1;
-    display: block;
-}
-
 
 /* hover : white rectangle */
 
@@ -181,18 +105,20 @@ body {
 
 /* popup */
 
-#sc_popup {
+#sc_popup,
+#sc_add_popup {
     position: fixed;
     top: 0;
     left: 0;
     display: none;
-    z-index: 999;
+    z-index: 997;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-#sc_popup_content {
+#sc_popup_content,
+#sc_add_popup_content {
     /* position: relative; */
     width: 60%;
     height: 100%;
@@ -204,37 +130,52 @@ body {
     box-shadow: 0 0 80px #000000;
 }
 
-#sc_popup_image_background {
+#sc_popup_image_background,
+#sc_popup_add_image_background {
     display: block;
     position: absolute;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    z-index: 998;
+    overflow: hidden;
+}
+
+#sc_popup_add_image_background {
+    width: 100%;
+    height: 100%;
+}
+
+#sc_popup_image_background {
     background-image: url("../image/image_1.jpg");
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
     /* fixme : did not show the background */
 }
 
 #sc_popup_image {
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
     text-align: center;
+    z-index: 999;
 }
 
-#sc_popup_image>img {}
-
-#sc_popup_detail {
+#sc_popup_detail,
+#sc_add_popup #sc_popup_detail {
     width: 100%;
 }
 
-#detail_row {
+#detail_row,
+#sc_add_popup #detail_row {
     width: 96%;
     height: 30px;
     padding: 5px 20px;
 }
 
-#detail_tags {
+#detail_tags,
+#sc_add_popup #detail_tags {
     display: inline-block;
     line-height: 30px;
     height: 30px;
@@ -322,4 +263,83 @@ body {
 #info_settings>p {
     display: inline-block;
     margin: 5px;
+}
+
+#close_modal,
+#close_add_modal {
+    color: white;
+    width: 30px;
+    height: 30px;
+    font-size: 1.8em;
+    font-weight: 600;
+    z-index: 9999;
+    float: right;
+    background: rgba(0, 0, 0, 0);
+    margin: 10px;
+    transition: .1s ease;
+    cursor: pointer;
+}
+
+#close_modal:hover,
+#close_add_modal:hover {
+    font-size: 2em;
+    float: right;
+}
+
+
+/* add pop up */
+
+#sc_popup_add_image {
+    position: relative;
+    display: block;
+    background-color: #acacac;
+    text-align: center;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#sc_popup_add_image>img {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#input_image_upload {
+    display: none;
+}
+
+#sc_add_popup input,
+#sc_add_popup textarea,
+#sc_add_popup select {
+    border: 0.5px solid #acacac;
+    border-radius: 5px;
+    height: 25px;
+    padding: 0px 10px;
+}
+
+#detail_location>input {
+    width: 500px;
+}
+
+#detail_explanation>textarea {
+    margin-left: 2%;
+    margin-top: 5px;
+    width: 96%;
+    height: 90px;
+}
+
+#detail_shooting_info>#info_camera {
+    width: 180px;
+}
+
+#info_settings>input {
+    text-align: center;
+    width: 100px;
 }
