@@ -12,23 +12,56 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="include/css/register.css">
+    <script>
+
+    $(window).ready(function(){
+        
+        $("#ic_add").click(function(){
+            if($("#camera").val()==""){
+                alert("카메라 정보를 입력해주세요!");
+                $("#camera").focus();
+            }else{
+                var children = $("#camera_list").find("option");
+                var isContain = false;
+                for(var i = 0; i<children.length; i++){
+                    if(children[i].text == $("#camera").val()){
+                        isContain = true;
+                        break;
+                    }
+                }
+                if(!isContain){
+                    $("#camera_list").append("<option>"+$("#camera").val()+"</option>")
+                }else{
+                    alert("이미 추가된 카메라입니다.");
+                }
+
+                $("#camera").val("");
+            }
+        });
+    });
+    </script>
 </head>
 
 <body>
 
     <section id="sc_signin">
-        <h1 id="title_signin">Sign In</h1>
-        <form id="form_signin" action="">
-            <input type="text" id="id" placeholder="ID" class="form_input" required><br>
-            <input type="password" id="password" placeholder="PASSWORD" class="form_input" required><br>
-            <input type="password" id="re_password" placeholder="RE-ENTER PASSWORD" class="form_input" required><br>
-            <input type="text" id="nickname" placeholder="NICKNAME" class="form_input" required><br>
-            <!-- <input type="submit" src="include/image/ic_login.svg"> -->
-            <select name="" id="" class="form_input">
-                <option value="sony">SONY a5100</option>
-            </select>
-            <input id="ic_signin" type="image" name="submit" src="include/image/ic_login.svg" border="0" alt="Submit" />
-        </form>
+        <div>
+
+            <h1 id="title_signin">Sign In</h1>
+            <form id="form_signin" action="">
+                <input type="text" id="id" placeholder="ID" class="form_input" required><br>
+                <input type="password" id="password" placeholder="PASSWORD" class="form_input" required><br>
+                <input type="password" id="re_password" placeholder="RE-ENTER PASSWORD" class="form_input" required><br>
+                <input type="text" id="nickname" placeholder="NICKNAME" class="form_input" required><br>
+                <!-- <input type="submit" src="include/image/ic_login.svg"> -->
+                
+                <select name="" id="camera_list" class="form_input">
+                    <!-- <option value="sony">SONY a5100</option> -->
+                </select>
+                <input type="text" id="camera" placeholder="camera" class="form_input"><img id="ic_add" src="include/image/ic_add.svg"><br>
+                <input id="ic_signin" type="image" name="submit" src="include/image/ic_login.svg" border="0" alt="Submit" />
+            </form>
+        </div>
 
     </section>
 </body>

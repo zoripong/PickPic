@@ -1,0 +1,51 @@
+
+body,
+html {
+    font-family: 'Open Sans', 'Roboto', 'Arvo', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/bg_index.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}    
+form{
+    width: 100%;
+    height: 100%;
+    text-align:center;
+}
+
+input{
+    width: 60%;
+    height: 60px;
+    border-radius: 20px;
+    border: 2px solid #acacac;
+    padding-left: 80px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    background-image: url('../image/ic_search.svg');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+header{
+    padding: 20px;
+    width: 100%;
+    height: 50px;
+}
+
+header #sm_logo{
+    width: auto;
+    height: 50px;
+}
+
+header #ic_user{
+    width: 50px;
+    height: 50px;
+    float: right;
+}

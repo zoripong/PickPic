@@ -10,11 +10,59 @@ body {
 }
 
 
+/*image list*/
+#sc_user_images {
+    width: 80%;
+    margin: 0px 10%;
+    padding: 75px 0;
+    padding-top: 20%;
+}
+
+#sc_user_images_row {
+    margin: 15px 0;
+}
+
+.user_image_container {
+    /*can be anything*/
+    width: 31%;
+    margin: 1%;
+    height: 300px;
+    /*can be anything*/
+    display: inline-block;
+    position: relative;
+}
+
+.user_image_container>img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    opacity: 1;
+    display: block;
+    border-radius: 10px;
+    
+}
+
 /* hover : white rectangle */
 
 .image_opacity {
     width: 100%;
     height: 0%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
     transition: .5s ease;
     /* opacity: 0; */
     opacity: 0.5;
@@ -41,6 +89,7 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
 
 .user_image_container:hover .user_image_container>img {
     opacity: 0.3;
@@ -110,12 +159,18 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    display: none;
+    /* display: none; */
     z-index: 997;
     width: 100%;
     height: 100%;
+    opacity: 0.0;
+    display: none;
     background-color: rgba(0, 0, 0, 0.4);
+    /* -webkit-transition: all 1s ease;
+    transition: all 1s ease; */
 }
+
+
 
 #sc_popup_content,
 #sc_add_popup_content {
@@ -128,6 +183,13 @@ body {
     -moz-box-shadow: 0 0 5px #888;
     -webkit-box-shadow: 0 0 5px#888;
     box-shadow: 0 0 80px #000000;
+    visibility: collapse;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    -webkit-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    transform: scale(0, 0);
+
 }
 
 #sc_popup_image_background,
@@ -303,7 +365,6 @@ body {
     height: 150px;
     background-color: rgba(0, 0, 0, 0);
     position: absolute;
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -329,9 +390,9 @@ body {
 }
 
 #detail_explanation>textarea {
-    margin-left: 2%;
+    margin-left: 2.5%;
     margin-top: 5px;
-    width: 96%;
+    width: 95%;
     height: 90px;
 }
 

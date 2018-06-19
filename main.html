@@ -41,28 +41,73 @@
                 var popImageWidth = parseInt($("#sc_popup_image>img").width());
                 // alert(popImageWidth);
                 $("#sc_popup_image_background").css({
-                    "width": "60%",
+                    "width": "100%",
                     "height": parentHeight - 250
                 });
 
-                $("#sc_popup").css("display", "block");
+                $("#sc_popup").css({
+                    "opacity": "1.0",
+                    "display" : "block"
+                    });
+
+                $("#sc_popup_content").css({
+                    "visibility": "visible",
+                    "-webkit-transform": "scale(1, 1)",
+                    "-ms-transform" : "scale(1, 1)",
+                    "transform": "scale(1, 1)"
+                });
+        
             });
 
-
-
             $("#close_modal").click(function() {
-                $("#sc_popup").css("display", "none");
+                
+                $("#sc_popup").css({
+                    "opacity": "0.0",
+                    "display" : "none"
+                });
+
+                $("#sc_popup_content").css({
+                    "-webkit-transition" : "all 1s ease",
+                    "visibility": "collapse",
+                    "-webkit-transform": "scale(0, 0)",
+                    "-ms-transform" : "scale(0, 0)",
+                    "transform": "scale(0, 0)"
+                });
             });
 
             $("#close_add_modal").click(function() {
-                $("#sc_add_popup").css("display", "none");
+                $("#sc_add_popup").css({
+                    "opacity": "0.0",
+                    "display" : "none"    
+                });
+                
+                $("#sc_add_popup_content").css({
+                    "-webkit-transition" : "all 1s ease",
+                    "visibility": "collapse",
+                    "-webkit-transform": "scale(0, 0)",
+                    "-ms-transform" : "scale(0, 0)",
+                    "transform": "scale(0, 0)"
+                });
+                
             });
             $("#sc_float_btn").click(function() {
+                // alert("hellow");
                 $("#sc_popup_add_image").css({
                     "width": "100%",
                     "height": parentHeight - 250
                 });
-                $("#sc_add_popup").css("display", "block");
+                
+                $("#sc_add_popup").css({
+                    "opacity": "1.0",
+                    "display" : "block"
+                });
+                
+                $("#sc_add_popup_content").css({
+                    "visibility": "visible",
+                    "-webkit-transform": "scale(1, 1)",
+                    "-ms-transform" : "scale(1, 1)",
+                    "transform": "scale(1, 1)"
+                });
             });
 
             $('#sc_popup_add_image').click(function() {
@@ -111,8 +156,32 @@
 
         $(document).keyup(function(e) {
             if (e.keyCode == 27) { // escape key maps to keycode `27`
-                $("#sc_popup").css("display", "none");
-                $("#sc_add_popup").css("display", "none");
+                // $("#sc_popup").css("display", "none");
+                // $("#sc_add_popup").css("display", "none");
+                $("#sc_popup").css({
+                    "opacity": "0.0",
+                    "display": "none"
+                });
+                
+                $("#sc_add_popup").css({
+                    "opacity":"0.0",
+                    "display":"none"
+                });
+                
+                $("#sc_popup_content").css({
+                    "-webkit-transition" : "all 1s ease",
+                    "visibility": "collapse",
+                    "-webkit-transform": "scale(0, 0)",
+                    "-ms-transform": "scale(0, 0)",
+                    "transform": "scale(0, 0)"
+                });
+                $("#sc_add_popup_content").css({
+                    "-webkit-transition" : "all 1s ease",
+                    "visibility": "collapse",
+                    "-webkit-transform": "scale(0, 0)",
+                    "-ms-transform": "scale(0, 0)",
+                    "transform": "scale(0, 0)"
+                });
             }
         });
     </script>
@@ -126,7 +195,7 @@
             <a href="index.html">가나</a>
         </section>
         <section id="user-info">
-            <a href="">
+            <a href="userInfo.html">
                 <img src="include/image/ic-user-default-profile.svg" alt="" srcset="">
                 <h1>devuri404</h1>
             </a>
@@ -224,6 +293,7 @@
     <button id="btn">modal</button>
     <button id="add_btn">add_modal</button>
     <!-- pop up dialog -->
+
     <section id="sc_popup">
         <span id="close_modal">X</span>
         <section id="sc_popup_content">
