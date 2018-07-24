@@ -1,0 +1,47 @@
+* mysql-server 설치
+#apt-get install mysql-server
+
+* mysql root password
+admin2018
+
+* mysql 로그인
+mysql -u root -p
+
+* database 생성
+create database PickPic
+
+* mysql 계정 생성 
+create user pickpic
+grant all privileges on PickPic.* to pickpic@localhost identified by'pickpic@)!*';
+grant all privileges on *.* to 'pickpic'@'%' identified by 'pickpic@)!*';
+
+flush privileges;
+* db 선택
+use PickPic
+
+* user table 생성
+CREATE TABLE user(
+  id INT(5) auto_increment,
+  user_id VARCHAR(32) NOT NULL,
+  password VARCHAR(32) NOT NULL,
+  nick_name VARCHAR(32) NOT NULL,
+  PRIMARY KEY (id)
+)DEFAULT CHARSET=utf8;
+
+* user_camera table 생성
+CREATE TABLE user_camera(
+  id INT(5) auto_increment,
+  user_id VARCHAR(32) NOT NULL,
+  camera VARCHAR(32) NOT NULL,
+  PRIMARY KEY (id)
+)DEFAULT CHARSET=utf8;
+
+* 기본값 삽입
+INSERT INTO user VALUES (null, 'test', 'test', '냐옹이');
+INSERT INTO user VALUES (null, 'test2', 'test2', '옹동이');
+
+INSERT INTO user_camera VALUES (null,'test', 'sony a5100');
+INSERT INTO user_camera VALUES (null,'test', 'canon m10');
+INSERT INTO user_camera VALUES (null,'test', 'panasonic p600');
+INSERT INTO user_camera VALUES (null,'test2', 'sony a5100');
+INSERT INTO user_camera VALUES (null,'test2', 'canon m120');
