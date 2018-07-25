@@ -7,7 +7,10 @@
 
     <!-- include jQeury -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <!-- include user js file -->
+    <script src="include/script/getData.js"></script>
     <script src="include/script/index.js"></script>
 
 
@@ -32,6 +35,7 @@
         </video>
     </section> -->
 
+    <div class="loader"></div>
     <section id="sc-logo" class="sc-center">
         <img src="include/image/logo_test.png" alt="PickPIC">
     </section>
@@ -39,26 +43,23 @@
     <section id="sc-login" class="sc-center">
 
         <div>
-
             <h1 id="title-login">PickPIC</h1>
-            
-            <form id="form-login" action="">
-                <input type="text" placeholder="ID" class="form-input" required>
+            <form id="form-login" action="main.html">
+                <input id="input-id" type="text" placeholder="ID" class="form-input" required>
                 <br>
-                <input type="password" placeholder="PASSWORD" class="form-input" required>
+                <input id="input-pw" type="password" placeholder="PASSWORD" class="form-input" required>
                 <!-- <input type="submit" src="include/image/ic_login.svg"> -->
+                <!-- <input  type="image" src="include/image/ic_login.svg" border="0" /> -->
                 <input id="ic-login" type="image" name="submit" src="include/image/ic_login.svg" border="0" alt="Submit" />
             </form>
-            
+
             <p>
                 <a href="register.html">SignIn</a>
             </p>
             <p>
                 <a href="#">Forgot Password?</a>
             </p>
-            
+
         </div>
     </section>
 </body>
-
-</html>

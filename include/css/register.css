@@ -24,13 +24,12 @@ html {
     /* opacity: 0.5; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
 }
-#sc_signin>div{
+
+#sc_signin>div {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-
 }
-
 
 #title_signin {
     width: 100%;
@@ -59,14 +58,56 @@ html {
     padding: 15px;
 }
 
-#camera{
+#camera {
     width: 50%;
     margin-right: 10%;
 }
 
-#ic_add{
+#ic_add {
     width: 5%;
     height: 5%;
     /* padding-top: 10px; */
     margin-left: -7.5%;
+}
+
+
+/* loading */
+
+.loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+    z-index: 999;
+}
+
+
+/* Safari */
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

@@ -5,60 +5,38 @@
     <meta charset="UTF-8">
     <title>PickPIC</title>
 
+    <!-- include jQeury -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- include user js file -->
+    <script src="include/script/getData.js"></script>
+    <script src="include/script/register.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="include/css/register.css">
-    <script>
-
-    $(window).ready(function(){
-        
-        $("#ic_add").click(function(){
-            if($("#camera").val()==""){
-                alert("카메라 정보를 입력해주세요!");
-                $("#camera").focus();
-            }else{
-                var children = $("#camera_list").find("option");
-                var isContain = false;
-                for(var i = 0; i<children.length; i++){
-                    if(children[i].text == $("#camera").val()){
-                        isContain = true;
-                        break;
-                    }
-                }
-                if(!isContain){
-                    $("#camera_list").append("<option>"+$("#camera").val()+"</option>")
-                }else{
-                    alert("이미 추가된 카메라입니다.");
-                }
-
-                $("#camera").val("");
-            }
-        });
-    });
-    </script>
 </head>
 
 <body>
-
+    <div class="loader"></div>
     <section id="sc_signin">
         <div>
 
             <h1 id="title_signin">Sign In</h1>
-            <form id="form_signin" action="">
+            <form id="form_signin" action="index.html">
                 <input type="text" id="id" placeholder="ID" class="form_input" required><br>
                 <input type="password" id="password" placeholder="PASSWORD" class="form_input" required><br>
                 <input type="password" id="re_password" placeholder="RE-ENTER PASSWORD" class="form_input" required><br>
                 <input type="text" id="nickname" placeholder="NICKNAME" class="form_input" required><br>
                 <!-- <input type="submit" src="include/image/ic_login.svg"> -->
-                
+
+                <input type="text" id="camera" placeholder="camera" class="form_input"><img id="ic_add" src="include/image/ic_add.svg"><br>
                 <select name="" id="camera_list" class="form_input">
                     <!-- <option value="sony">SONY a5100</option> -->
                 </select>
-                <input type="text" id="camera" placeholder="camera" class="form_input"><img id="ic_add" src="include/image/ic_add.svg"><br>
                 <input id="ic_signin" type="image" name="submit" src="include/image/ic_login.svg" border="0" alt="Submit" />
             </form>
         </div>
