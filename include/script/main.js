@@ -1,6 +1,6 @@
 var parentHeight = parseInt($(window).height());
 
-function openModal(path){
+function openModal(path, id){
     $("#sc_popup_image>img").css({
             "width": "auto",
             "height": parentHeight - 250
@@ -26,7 +26,21 @@ function openModal(path){
             "transform": "scale(1, 1)"
         });
 
+        var tags = "";
+        for(var i = 0; i<board_array[id].tag.length; i++){
+            tags += "<a href='#'><p>#"+board_array[id].tag[i]+"</p></a>";
+        }
+        $("#detail_tags").html(tags);
+        // alert(board_array[id].tag[0]);
+        p_location
+        $("#p_location").text(board_array[id].location);
+        $("#p_detail_explan").text(board_array[id].description);
+        $("#info_camera").text(board_array[id].camera);
 
+        $("#info_angle").text(board_array[id].angle);
+        $("#info_tightening").text(board_array[id].tightening);
+        $("#info_shutter_speed").text(board_array[id].shutter_speed);
+        $("#info_iso").text(board_array[id].iso);
 }
 $(window).scroll(function() {
     var standardHeightPx = parentHeight * (35 / 100);
@@ -220,7 +234,7 @@ function insertBoard(){
             var errorMessage = xhr.status + ': ' + xhr.statusText
             alert('Error - ' + errorMessage);
         }
-    }
+    });
 
 }
 
