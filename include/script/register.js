@@ -102,7 +102,6 @@ $(window).ready(function() {
 
 });
 
-
 function insertUserData() {
 
     var camera_array = Array();

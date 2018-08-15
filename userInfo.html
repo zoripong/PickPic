@@ -7,52 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PickPIC</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- include user js file -->
+    <script src="include/script/getData.js"></script>
+    <script src="include/script/userInfo.js"></script>
+
     <link rel="stylesheet" href="include/css/user_header.css">
     <link rel="stylesheet" href="include/css/userInfo.css">
-    <script>
-        var parentHeight = parseInt($(window).height());
 
-         $(window).scroll(function() {
-            var standardHeightPx = parentHeight * (35 / 100);
-            var minHeightPx = parentHeight * (10 / 100);
-
-            if (standardHeightPx - $(this).scrollTop() > minHeightPx) {
-                $("#hd-user-title").css({
-                    "height": standardHeightPx - $(this).scrollTop()
-                        //,"line-height": standardHeightPx - $(this).scrollTop()
-                });
-            } else {
-                $("#hd-user-title").css({
-                    "height": parentHeight * (10 / 100)
-                        //,"line-height": parentHeight * (5 / 100)
-                });
-
-            }
-        });
-        $(window).ready(function(){
-            $("#hd-user-title").click(function(){
-                $("#background_upload").trigger("click");
-            });
-
-            $("input[type=file]").on("click", function(e) {
-                e.stopPropagation();
-            });
-
-            $("#background_upload").on("change", function(e) {
-                if (this.files && this.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        // $('#preview').attr('src', e.target.result);
-                        // background-image: url("../image/image_6.jpg");
-
-                        $("#hd-user-title").css("background-image", "url("+e.target.result+")");
-                    };
-                    reader.readAsDataURL(this.files[0]);
-                }
-            });
-
-        });
-</script>
 </head>
 
 
@@ -66,47 +28,47 @@
         <section id="user-info">
             <a href="main.html">
                 <img src="include/image/ic-user-default-profile.svg" alt="" srcset="">
-                <h1>devuri404</h1>
+                <h1 id="h_id">devuri404</h1>
             </a>
         </section>
     </header>
     <!--  -->
-    <form action="">
+    <form id="form-update-info" action="userIndex.html">
 
         <section id="sc_user_info">
             <div class="row">
-                <p class="title">ID</p> : devuri404
+                <p class="title">ID</p> : <p id="p_id">devuri404</p>
             </div>
             <hr>
             <div class="row">
                 <p class="title">Password</p> :
-                <input type="password" name="password" placeholder="password">
+                <input type="password" name="password"  id="password" placeholder="password">
             </div>
             <hr>
             <div class="row">
                 <p class="title"> RE-ENTER </p> :
-                <input type="password" name="reenter" placeholder="password">
+                <input type="password" name="reenter" id="re_password" placeholder="password">
             </div>
             <hr>
             <div class="row">
                 <p class="title">NICK-NAME</p> :
-                <input type="text" name="nickname"  placeholder="nickname">
+                <input type="text" name="nickname"  id="nickname" placeholder="nickname">
             </div>
             <hr>
             <div class="row">
                 <p class="title">CAMERA </p> :
-                <select>
-                    <option>
-                        SONY A5100
-                    </option>
-                    <option>
-                        Canon m500
-                    </option>
+                <select name="" id="camera_list" class="form_input">
+                    <!-- <option value="sony">SONY a5100</option> -->
                 </select>
+
             </div>
+            <div id="add_row">
+                <input type="text" id="camera" placeholder="camera" class="form_input"><img id="ic_add" src="include/image/ic_add.svg"><br>
+            </div>
+
         </section>
         <section  id="sc_submit">
-            <input type="button" id="submit_btn" value="SAVE" >
+            <input type="submit" id="submit_btn" value="SAVE" >
         </section>
     </form>
 </body>

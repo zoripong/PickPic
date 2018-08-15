@@ -77,3 +77,29 @@ body {
 #hd-user-title{
     cursor: pointer;
 }
+
+#camera {
+    margin-left: 35%;
+    width: 45%;
+    display:inline-block;
+    border-radius: 10px;
+    height: 30px;
+    border: 1px solid #acacac;
+    padding-left: 3px;
+    transition-duration: .2s;
+
+}
+
+#camera:hover{
+    border-radius: 5px;
+}
+
+#ic_add{
+    width: 30px;
+    height: 30px;
+}
+/* #ic_add {
+    width: 5%;
+    height: 5%;
+    /* padding-top: 10px; */
+
