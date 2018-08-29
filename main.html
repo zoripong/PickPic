@@ -6,10 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PickPIC</title>
-    
+
     <!-- include jQeury -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- include Firebase  -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDVM5vMvjOEmJtxqcNCLfJ3xUcvP5AHND0",
+            authDomain: "pickpic-9fddf.firebaseapp.com",
+            databaseURL: "https://pickpic-9fddf.firebaseio.com",
+            projectId: "pickpic-9fddf",
+            storageBucket: "pickpic-9fddf.appspot.com",
+            messagingSenderId: "445484423500"
+        };
+        firebase.initializeApp(config);
+    </script>
 
     <!-- include user js file -->
     <script src="include/script/getData.js"></script>
@@ -21,7 +36,7 @@
 
 
 <body>
-    <div class="loader"></div>
+    <div id="loader" class="loader"></div>
 
     <!-- user title -->
     <header id="hd-user-title">
@@ -80,7 +95,7 @@
     <!-- FIXME -->
     <button id="btn">modal</button>
     <!-- pop up dialog -->
-<!-- todo -->
+    <!-- todo -->
     <section id="sc_popup">
         <span id="close_modal">X</span>
         <section id="sc_popup_content">
@@ -155,8 +170,9 @@
                         <img src="" id="sc_popup_add_image_background_here">
                     </section>
                     <img id="preview" src="include/image/ic_add_picture.svg">
-
-                    <input type="file" id="input_image_upload" accept="image/*" name="image">
+                    <!--  -->
+                    <input type="file" id="input_image_upload" accept="image/*" name="image" capture="camera">
+                    <!--  -->
                 </section>
                 <section id="sc_popup_detail">
                     <div id="detail_row">
@@ -174,7 +190,7 @@
                     </div>
                     <div id="detail_shooting_info">
                         <img id="info_camera_img" src="include/image/ic_camera.svg">
-                        <select id="info_camera">
+                        <select id="input_info_camera">
                             <option>
                                 SONY a5100
                             </option>
@@ -189,10 +205,10 @@
                         <p id="info_tightening">f/1.2</p>
                         <p id="info_shutter_speed">1/200s</p>
                         <p id="info_iso">ISO 500</p> -->
-                            <input type="number" id="info_angle" name="info_angle" placeholder="화각">
-                            <input type="number" id="info_tightening" name="info_tightening" placeholder="조리개값">
-                            <input type="number" id="info_shutter_speed" name="info_shutter_speed" placeholder="셔터속도">
-                            <input type="number" id="info_iso" name="info_iso" placeholder="ISO">
+                            <input type="number" id="input_info_angle" name="info_angle" placeholder="화각">
+                            <input type="number" id="input_info_tightening" name="info_tightening" placeholder="조리개값">
+                            <input type="number" id="input_info_shutter_speed" name="info_shutter_speed" placeholder="셔터속도">
+                            <input type="number" id="input_info_iso" name="info_iso" placeholder="ISO">
                             <input type="submit" id="submit_button" value="업로드">
                         </div>
                     </div>
