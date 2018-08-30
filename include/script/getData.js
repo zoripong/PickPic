@@ -76,7 +76,8 @@ function setView() {
     $('#loader').removeClass('loader');
     // alert("hi"+board_array.length);
     var str = "";
-    for (var i = 0; i < board_array.length; i++) {
+    var i = 0;
+    for (i = 0; i < board_array.length; i++) {
         if (i % 3 == 0) {
             str += "<section id='sc_user_images_row'>";
         }
@@ -91,6 +92,9 @@ function setView() {
         if (i % 3 == 2) {
             str += "</section>";
         }
+    }
+    if (i == 0) {
+        str = "<section id=\"guide_message\">게시한 사진이 없습니다.</section>";
     }
     $("#sc_user_images").append(str);
 
