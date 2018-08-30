@@ -1,28 +1,28 @@
 var parentHeight = parseInt($(window).height());
 
-    $(window).scroll(function() {
+$(window).scroll(function() {
     var standardHeightPx = parentHeight * (35 / 100);
     var minHeightPx = parentHeight * (10 / 100);
 
     if (standardHeightPx - $(this).scrollTop() > minHeightPx) {
         $("#hd-user-title").css({
-            "height": standardHeightPx - $(this).scrollTop()
-                ,"line-height": standardHeightPx - $(this).scrollTop()
+            "height": standardHeightPx - $(this).scrollTop(),
+            "line-height": standardHeightPx - $(this).scrollTop()
         });
     } else {
         $("#hd-user-title").css({
-            "height": parentHeight * (10 / 100)
-                ,"line-height": parentHeight * (5 / 100)
+            "height": parentHeight * (10 / 100),
+            "line-height": parentHeight * (5 / 100)
         });
 
     }
 });
-$(window).ready(function(){
-    
+$(window).ready(function() {
+
     $("#p_id").text(sessionStorage.getItem("user_id"));
     $("#h_id").text(sessionStorage.getItem("user_id"));
 
-    $("#hd-user-title").click(function(){
+    $("#hd-user-title").click(function() {
         $("#background_upload").trigger("click");
     });
 
@@ -37,13 +37,13 @@ $(window).ready(function(){
                 $('#preview').attr('src', e.target.result);
                 //background-image: url("../image/image_6.jpg");
 
-                $("#hd-user-title").css("background-image", "url("+e.target.result+")");
+                $("#hd-user-title").css("background-image", "url(" + e.target.result + ")");
             };
             reader.readAsDataURL(this.files[0]);
         }
     });
 
-    $("#form-update-info").submit(function(){
+    $("#form-update-info").submit(function() {
         if ($("#camera_list").children().length == 0) {
             if (!confirm("소유하신 카메라가 없으신가요?")) {
                 $("#camera").focus();
@@ -54,7 +54,7 @@ $(window).ready(function(){
         updateUserData();
     });
 
-    
+
     $("#re_password").change(function() {
         if ($("#password").val() == "") {
             return;
@@ -115,7 +115,7 @@ function updateUserData() {
         camera_array.push(camera_li[i].text);
     }
     var camera_json = JSON.stringify(camera_array);
-
+    alert(sessionStorage.getItem("user_id"));
     $.ajax({
         type: "POST",
         async: true,
