@@ -12,6 +12,7 @@ body {
 
 
 /*image list*/
+
 #sc_user_images {
     width: 80%;
     margin: 0px 10%;
@@ -49,8 +50,8 @@ body {
     opacity: 1;
     display: block;
     border-radius: 10px;
-    
 }
+
 
 /* hover : white rectangle */
 
@@ -63,7 +64,6 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-
     transition: .5s ease;
     /* opacity: 0; */
     opacity: 0.5;
@@ -90,7 +90,6 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
 }
-
 
 .user_image_container:hover .user_image_container>img {
     opacity: 0.3;
@@ -172,8 +171,6 @@ body {
     transition: all 1s ease; */
 }
 
-
-
 #sc_popup_content,
 #sc_add_popup_content {
     /* position: relative; */
@@ -191,7 +188,6 @@ body {
     -webkit-transform: scale(0, 0);
     -ms-transform: scale(0, 0);
     transform: scale(0, 0);
-
 }
 
 #sc_popup_image_background,
@@ -406,6 +402,8 @@ body {
     text-align: center;
     width: 100px;
 }
+
+
 /* loading */
 
 .loader {
@@ -445,4 +443,10 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+#guide_message {
+    width: 100%;
+    margin-top: 10%;
+    text-align: center;
 }

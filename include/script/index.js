@@ -1,5 +1,6 @@
 $(document).ready(function() {
-
+    sessionStorage.setItem("user_id", "");
+    sessionStorage.setItem("user_index", "");
     getUserInfo();
 
     // css
@@ -26,14 +27,15 @@ $(document).ready(function() {
         var i = 0;
         for (i = 0; i < user_array.length; i++) {
             if (id == user_array[i].user_id && pw == user_array[i].password) {
-            alert("성공!");
-            sessionStorage.setItem("user_id", id);
-            sessionStorage.setItem("user_index", i);
-            return true;
+                alert("성공!");
+                sessionStorage.setItem("user_id", id);
+                sessionStorage.setItem("user_index", i);
+                return true;
             }
         }
         if (i == user_array.length) {
             alert("실패!");
+            return false;
         }
     });
 
